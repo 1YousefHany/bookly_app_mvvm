@@ -8,15 +8,14 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16,bottom: 22),
+      padding: const EdgeInsets.only(right: 16, bottom: 22),
       child: SizedBox(
-        height:  MediaQuery.of(context).size.width * .3,
-        child:  Row(
+        height: MediaQuery.of(context).size.width * .3,
+        child: Row(
           children: [
             itemImage(),
-          const  SizedBox(width: 30),
-          const  BestSellerItemTexts(),
-            
+            const SizedBox(width: 30),
+            const BestSellerItemTexts(),
           ],
         ),
       ),
@@ -25,7 +24,8 @@ class BestSellerListViewItem extends StatelessWidget {
 
   SizedBox itemImage() {
     return const SizedBox(
-                  height: 145,
-            child: BookImage(aspectRatio: 2 / 3, borderRadius: 8));
+      height: 145,
+      child: BookImage(aspectRatio: 2 / 3, borderRadius: 8),
+    );
   }
 }
