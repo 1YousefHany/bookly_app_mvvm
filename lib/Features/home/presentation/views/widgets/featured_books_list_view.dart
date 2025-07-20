@@ -16,7 +16,7 @@ class FeaturedBooksListView extends StatelessWidget {
          itemBuilder:  (context , index){
           return const Padding(
             padding:  EdgeInsets.only(right : 16.0),
-            child:  BookImage(aspectRatio: .66,borderRadius: 16),
+            child:  BookImage(),
           );
         }),
       ),

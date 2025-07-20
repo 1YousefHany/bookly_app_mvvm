@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/book_rate_and_buyers_count.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class BestSellerItemTexts extends StatelessWidget {
     return Expanded(
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [priceText(context), ratingAndBuyersCount()],
+          children: [priceText(context), const BookRateAndBuyersCount()],
         ),
     );
   }
@@ -65,16 +66,8 @@ class BestSellerItemTexts extends StatelessWidget {
     );
   }
 
-  Row ratingAndBuyersCount() {
-    return Row(
-      children: [
-        const Icon(Icons.star_rounded, color: Colors.amberAccent, size: 24),
-        Text(
-          '4.8',
-          style: Styles.textStyleSb16.copyWith(fontWeight: FontWeight.bold),
-        ),
-         Text(' (2390)', style: Styles.textStyleRg14.copyWith(color: Colors.grey)),
-      ],
-    );
-  }
+  
+ 
 }
+
+

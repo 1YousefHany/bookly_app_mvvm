@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BookImage extends StatelessWidget {
-  const BookImage({super.key, required this.aspectRatio, required this.borderRadius});
+  const BookImage({super.key,  this.aspectRatio  = .66,  this.borderRadius = 16});
   final double aspectRatio;
   final double borderRadius;
 
