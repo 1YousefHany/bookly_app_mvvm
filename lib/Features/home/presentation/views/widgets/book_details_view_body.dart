@@ -1,7 +1,8 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/also_like_list_view.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_rate_and_buyers_count.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/details_view_app_bar.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/details_view_buttons.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/core/widgets/custom_text_button.dart';
 import 'package:bookly_app/core/widgets/images/book_image.dart';
 import 'package:flutter/material.dart';
 
@@ -12,21 +13,36 @@ class BookDetailsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.only(top: 32, left: 30, right: 30),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        spacing: 6,
         children: [
           const DetailsViewAppBar(),
           cutomDetailsImage(width),
           const SizedBox(height: 16),
           bookName(),
+          const SizedBox(height: 3),
           writerName(),
+          const SizedBox(height: 3),
           rateAndCount(),
-          const SizedBox(height: 24),
           const DetailsViewButtons(),
+          customAlsoLikeText(),
+          const SizedBox(height: 10),
+          const AlsoLikeListView(),
         ],
       ),
+    );
+  }
+
+  Row customAlsoLikeText() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(
+          'You can also like',
+          style: Styles.textStyleRg14.copyWith(fontWeight: FontWeight.bold),
+        ),
+      ],
     );
   }
 
@@ -52,42 +68,6 @@ class BookDetailsViewBody extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: width * .19),
       child: const BookImage(),
-    );
-  }
-}
-
-class DetailsViewButtons extends StatelessWidget {
-  const DetailsViewButtons({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(child: leftButton()),
-        Expanded(child: rightButton()),
-      ],
-    );
-  }
-
-  CustomTextButton leftButton() {
-    return const CustomTextButton(
-      backgroundColor: Colors.white,
-      text: '19.99\$',
-      textStyle: Styles.textStyleRg20,
-      textColor: Colors.black,
-      topLeft: 16,
-      bottomLeft: 16,
-    );
-  }
-
-  CustomTextButton rightButton() {
-    return const CustomTextButton(
-      backgroundColor: Colors.orange,
-      text: 'Free preview',
-      textStyle: Styles.textStyleSb16,
-      textColor: Colors.white,
-      topRight: 16,
-      bottomRight: 16,
     );
   }
 }
