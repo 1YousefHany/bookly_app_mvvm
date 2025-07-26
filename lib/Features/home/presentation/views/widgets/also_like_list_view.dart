@@ -6,14 +6,7 @@ class AlsoLikeListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: ConstrainedBox(
-        constraints: BoxConstraints(
-          maxHeight: MediaQuery.of(context).size.height * .16,
-        ),
-        child: customListView(context),
-      ),
-    );
+    return customListView(context);
   }
 
   customListView(BuildContext context) {

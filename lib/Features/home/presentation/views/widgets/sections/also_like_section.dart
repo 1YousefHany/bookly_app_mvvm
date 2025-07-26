@@ -7,14 +7,15 @@ class AlsoLikeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
-customAlsoLikeText(),
-                const SizedBox(height: 10),
-                const AlsoLikeListView(),
+        customAlsoLikeText(),
+        const SizedBox(height: 10),
+        const AlsoLikeListView(),
       ],
     );
   }
+
   Row customAlsoLikeText() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
