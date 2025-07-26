@@ -9,7 +9,7 @@ class AlsoLikeListView extends StatelessWidget {
     return Flexible(
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          maxHeight: MediaQuery.of(context).size.height * .15,
+          maxHeight: MediaQuery.of(context).size.height * .16,
         ),
         child: customListView(context),
       ),
@@ -18,7 +18,7 @@ class AlsoLikeListView extends StatelessWidget {
 
   customListView(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .15,
+      height: MediaQuery.of(context).size.height * .16,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 5,
