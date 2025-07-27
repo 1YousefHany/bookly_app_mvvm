@@ -13,7 +13,9 @@ class HomeViewBody extends StatelessWidget {
       padding: const EdgeInsets.only(left: 30),
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(child: appBar_horizontalList_bestSellerText(context)),
+          SliverToBoxAdapter(
+            child: appBar_horizontalList_bestSellerText(context),
+          ),
           const SliverFillRemaining(child: BestSellerListView()),
         ],
       ),
@@ -22,14 +24,12 @@ class HomeViewBody extends StatelessWidget {
 
   // ignore: non_constant_identifier_names
   Column appBar_horizontalList_bestSellerText(context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const HomeViewAppBar(),
-        FeaturedBooksListView(
-          listHeight: MediaQuery.of(context).size.height * .35,
-        ),
-        const BestSellerText(text: 'Best Seller'),
+         HomeViewAppBar(),
+        FeaturedBooksListView(),
+         BestSellerText(text: 'Best Seller'),
       ],
     );
   }
